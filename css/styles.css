@@ -326,19 +326,23 @@ header {
   margin-bottom: 4px;
   text-align: left;
 }
+.modal-thumb {
+  position: relative;
+  margin-bottom: 10px;
+}
 .modal-input {
   width: 448px;
   height: 40px;
   padding-left: 42px;
   border: 1px solid rgba(33, 33, 33, 0.2);
   border-radius: 4px;
-  margin-bottom: 10px;
+  outline: transparent;
 
-  transition: border-color 250ms var(--animation-cubic),
-    drop-shadow 250ms var(--animation-cubic);
+  transition: border-color 250ms var(--animation-cubic);
 }
-.modal-thumb {
-  position: relative;
+
+.modal-input:focus-within {
+  border-color: #2196f3;
 }
 
 .modal-icon-input {
@@ -346,16 +350,11 @@ header {
   top: 11px;
   left: 12px;
   fill: currentColor;
-  transition: color 250ms var(--animation-cubic),
-    border 250ms var(--animation-cubic);
+  transition: color 250ms var(--animation-cubic);
 }
 
 .modal-input:focus + .modal-icon-input {
   color: #2196f3;
-}
-.modal-input:focus-within {
-  border-color: #2196f3;
-  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 }
 
 .comment-text {
@@ -365,7 +364,13 @@ header {
   resize: none;
   height: 120px;
   margin-bottom: 25px;
+  outline: transparent;
+  transition: border-color 250ms var(--animation-cubic);
 }
+.comment-text:focus-within {
+  border-color: #2196f3;
+}
+
 .comment-text::placeholder {
   font-size: 14px;
   line-height: 16px;
@@ -753,7 +758,7 @@ header {
   text-transform: uppercase;
   margin-bottom: 20px;
 }
-.subscribe input[type="email"] {
+.subscribe .input-footer {
   padding: 15px 16px;
   margin-right: 12px;
 
